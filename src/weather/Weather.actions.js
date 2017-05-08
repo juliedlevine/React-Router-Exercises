@@ -1,5 +1,5 @@
 import $ from 'jquery';
-const WEATHER_APP_ID = 'd572e3897b56c1638fada0388125c161';
+const WEATHER_APP_ID = 'a82385e9697be80fd79fee3f6bb4d3b9';
 
 export function changeName(name) {
   return { type: 'changeName', value: name };

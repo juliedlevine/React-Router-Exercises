@@ -3,6 +3,17 @@ import * as ReactRedux from 'react-redux';
 import * as actions from './Weather.actions';
 
 class Weather extends React.Component {
+  componentDidMount() {
+      this.props.getWeather(this.props.params.name)
+  }
+
+  // detects change in props and will update accordingly
+  componentWillReceiveProps(newProps) {
+      if (this.props.params.name !== newProps.params.name) {
+        this.props.getWeather(newProps.params.name)
+      }
+    }
+
   render() {
     let weather = this.props.weatherData;
     let weatherDisplay;
@@ -20,7 +31,6 @@ class Weather extends React.Component {
     }
     return (
       <div>
-        <button onClick={() => this.props.getWeather(this.props.params.name)}>Get Weather</button><br/>
         {weatherDisplay}
       </div>
     );

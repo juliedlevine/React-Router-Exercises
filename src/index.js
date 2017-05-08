@@ -30,16 +30,16 @@ const store = Redux.createStore(
 );
 
 ReactDOM.render(
-  <ReactRedux.Provider store={store}>
-      <Router history={hashHistory}>
-        <Route path='/' component={AppLayout}>
-            <IndexRoute component={HomePage}/>
-            <Route path='/counter' component={CounterContainer}/>
-            <Route path='/gallery' component={GalleryContainer}/>
-            <Route path='/dragon' component={DragonGameContainer}/>
-            <Route path='/weather/:name' component={WeatherContainer}/>
-        </Route>
-    </Router>
-  </ReactRedux.Provider>,
+    <ReactRedux.Provider store={store}>
+        <Router history={hashHistory}>
+            <Route path='/' component={AppLayout}>
+                <IndexRoute component={HomePage}/>
+                <Route path='/counter' component={CounterContainer}/>
+                <Route path='/gallery' component={GalleryContainer}/>
+                <Route path='/dragon' component={DragonGameContainer}/>
+                <Route path='/weather/:name' component={WeatherContainer}/>
+            </Route>
+        </Router>
+    </ReactRedux.Provider>,
   document.getElementById('root')
 );
